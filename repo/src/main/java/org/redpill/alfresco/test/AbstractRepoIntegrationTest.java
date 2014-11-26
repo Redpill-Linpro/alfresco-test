@@ -21,6 +21,7 @@ import org.alfresco.repo.security.authentication.AuthenticationUtil.RunAsWork;
 import org.alfresco.repo.site.SiteModel;
 import org.alfresco.repo.transaction.RetryingTransactionHelper;
 import org.alfresco.repo.transaction.RetryingTransactionHelper.RetryingTransactionCallback;
+import org.alfresco.repo.forum.CommentService;
 import org.alfresco.service.cmr.model.FileFolderService;
 import org.alfresco.service.cmr.model.FileInfo;
 import org.alfresco.service.cmr.repository.ContentService;
@@ -90,6 +91,10 @@ public abstract class AbstractRepoIntegrationTest implements InstanceTestClassLi
   @Autowired
   @Qualifier("NodeService")
   protected NodeService _nodeService;
+  
+  @Autowired
+  @Qualifier("CommentService")
+  protected CommentService _commentService;
 
   @Autowired
   @Qualifier("FileFolderService")
