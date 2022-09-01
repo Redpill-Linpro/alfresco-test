@@ -1,6 +1,9 @@
 FROM ${docker.acs.image}:${alfresco.platform.version}
 
 ARG TOMCAT_DIR=/usr/local/tomcat
+ARG USERNAME=${alfresco.platform.docker.user}
+
+USER root
 
 # Copy Dockerfile to avoid an error if no JARs exist
 COPY Dockerfile extensions/*.jar $TOMCAT_DIR/webapps/alfresco/WEB-INF/lib/
@@ -16,3 +19,5 @@ COPY disable-webscript-caching-context.xml $TOMCAT_DIR/shared/classes/alfresco/e
 
 # Copy Dockerfile to avoid an error if no license file exists
 COPY Dockerfile license/*.* $TOMCAT_DIR/webapps/alfresco/WEB-INF/classes/alfresco/extension/license/
+
+USER ${USERNAME}

@@ -18,6 +18,10 @@ services:
       dockerfile: ./Dockerfile
       context: ../../../alfresco-test-platform-docker/target
     environment:
+      JAVA_TOOL_OPTIONS: "${keystore.settings}"
+      JAVA_OPTS: "
+        -Dmessaging.broker.url=\"failover:(nio://alfresco-alingsas-activemq:61616)?timeout=3000&jms.useCompression=true\"
+        "
       CATALINA_OPTS: "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=0.0.0.0:8888"
     ports:
       - "${acs.port}:8080"
@@ -50,6 +54,15 @@ services:
     volumes:
       - alfresco-test-ass-volume:/opt/alfresco-search-services/contentstore
       - alfresco-test-ass-volume:/opt/alfresco-search-services/data
+  alfresco-alingsas-activemq:
+      image: alfresco/alfresco-activemq:5.16.1
+      mem_limit: 1g
+      ports:
+        - 8161:8161 # Web Console
+        - 5672:5672 # AMQP
+        - 61616:61616 # OpenWire
+        - 61613:61613 # STOMP
+
 volumes:
   alfresco-test-acs-volume:
     external: true

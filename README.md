@@ -2,11 +2,11 @@
 
 This project contains general helper functions to use when writing integration tests of webscripts or components.
 
-It is base on SDK 4.0 and is run according to the defaultt SDK 4.0 instructions.
+It is base on SDK 4.4 and is run according to the defaultt SDK 4.4 instructions.
 
 When implementing new integration tests you can either extend the org.redpill.alfresco.test.AbstractComponentIT or org.redpill.alfresco.test.AbstractWebScriptIT depending on the type of test you want to write.
 
-# SDK 4.0 instructions
+# SDK 4.4 instructions
 
 Run with `./run.sh build_start` or `./run.bat build_start` and verify that it
 

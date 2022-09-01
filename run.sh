@@ -12,20 +12,20 @@ start() {
     docker volume create alfresco-test-acs-volume
     docker volume create alfresco-test-db-volume
     docker volume create alfresco-test-ass-volume
-    docker-compose -f $COMPOSE_FILE_PATH up --build -d
+    docker-compose -f "$COMPOSE_FILE_PATH" up --build -d
 }
 
 start_share() {
-    docker-compose -f $COMPOSE_FILE_PATH up --build -d alfresco-test-share
+    docker-compose -f "$COMPOSE_FILE_PATH" up --build -d alfresco-test-share
 }
 
 start_acs() {
-    docker-compose -f $COMPOSE_FILE_PATH up --build -d alfresco-test-acs
+    docker-compose -f "$COMPOSE_FILE_PATH" up --build -d alfresco-test-acs
 }
 
 down() {
-    if [ -f $COMPOSE_FILE_PATH ]; then
-        docker-compose -f $COMPOSE_FILE_PATH down
+    if [ -f "$COMPOSE_FILE_PATH" ]; then
+        docker-compose -f "$COMPOSE_FILE_PATH" down
     fi
 }
 
@@ -40,23 +40,23 @@ build() {
 }
 
 build_share() {
-    docker-compose -f $COMPOSE_FILE_PATH kill alfresco-test-share
-    yes | docker-compose -f $COMPOSE_FILE_PATH rm -f alfresco-test-share
+    docker-compose -f "$COMPOSE_FILE_PATH" kill alfresco-test-share
+    yes | docker-compose -f "$COMPOSE_FILE_PATH" rm -f alfresco-test-share
     $MVN_EXEC clean package -pl alfresco-test-share,alfresco-test-share-docker
 }
 
 build_acs() {
-    docker-compose -f $COMPOSE_FILE_PATH kill alfresco-test-acs
-    yes | docker-compose -f $COMPOSE_FILE_PATH rm -f alfresco-test-acs
+    docker-compose -f "$COMPOSE_FILE_PATH" kill alfresco-test-acs
+    yes | docker-compose -f "$COMPOSE_FILE_PATH" rm -f alfresco-test-acs
     $MVN_EXEC clean package -pl alfresco-test-integration-tests,alfresco-test-platform,alfresco-test-platform-docker
 }
 
 tail() {
-    docker-compose -f $COMPOSE_FILE_PATH logs -f
+    docker-compose -f "$COMPOSE_FILE_PATH" logs -f
 }
 
 tail_all() {
-    docker-compose -f $COMPOSE_FILE_PATH logs --tail="all"
+    docker-compose -f "$COMPOSE_FILE_PATH" logs --tail="all"
 }
 
 prepare_test() {
