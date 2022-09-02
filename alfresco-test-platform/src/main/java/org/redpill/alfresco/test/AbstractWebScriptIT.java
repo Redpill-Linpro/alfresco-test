@@ -336,7 +336,7 @@ public abstract class AbstractWebScriptIT {
   protected String getDocumentLibraryNodeRef(String site) {
     RequestSpecification request = given()
             .baseUri(getBaseUri())
-            .and().pathParameter("shortName", site)
+            .and().pathParam("shortName", site)
             .and().pathParam("container", "documentLibrary")
             .and().contentType(ContentType.JSON.withCharset("UTF-8"));
 
