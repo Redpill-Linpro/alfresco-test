@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.redpill-linpro.alfresco</groupId>
     <artifactId>alfresco-test</artifactId>
-    <version>5.0.0-SNAPSHOT</version>
+    <version>4.4.0-SNAPSHOT</version>
     <name>AIO - SDK 4.4</name>
     <description>All-In-One (AIO) project for SDK 4.4</description>
     <packaging>pom</packaging>
@@ -223,7 +223,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>3.0.0-M1</version>
+                    <version>3.0.0-M7</version>
                     <executions>
                         <execution>
                             <id>integration-test</id>
