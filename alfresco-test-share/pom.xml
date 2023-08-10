@@ -5,12 +5,12 @@
     <artifactId>alfresco-test-share</artifactId>
     <name>Alfresco Share JAR Module</name>
     <packaging>jar</packaging>
-    <description>Sample Share JAR Module (to be included in the share.war) - part of AIO - SDK 4.4</description>
+    <description>Sample Share JAR Module (to be included in the share.war) - part of AIO - SDK 4.6</description>
 
     <parent>
         <groupId>org.redpill-linpro.alfresco</groupId>
         <artifactId>alfresco-test</artifactId>
-        <version>4.4.0</version>
+        <version>4.6.0</version>
     </parent>
 
     <properties>

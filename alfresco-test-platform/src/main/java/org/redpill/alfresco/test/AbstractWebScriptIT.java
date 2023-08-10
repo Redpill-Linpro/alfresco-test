@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,7 +30,7 @@ import static org.junit.Assert.fail;
 
 public abstract class AbstractWebScriptIT {
 
-  private final static Logger LOG = Logger.getLogger(AbstractWebScriptIT.class);
+  private final static Logger LOG = LoggerFactory.getLogger(AbstractWebScriptIT.class);
 
   private static final String ACS_ENDPOINT_PROP = "acs.endpoint.path";
   private static final String ACS_DEFAULT_ENDPOINT = "http://localhost:8080/alfresco";
