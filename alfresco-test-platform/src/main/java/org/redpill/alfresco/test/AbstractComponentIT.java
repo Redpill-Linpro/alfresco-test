@@ -39,8 +39,7 @@ import org.alfresco.util.PropertyMap;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.context.ApplicationContext;
@@ -56,7 +55,7 @@ import static org.junit.Assert.fail;
 @RunWith(value = AlfrescoTestRunner.class)
 public abstract class AbstractComponentIT extends AbstractAlfrescoIT {
 
-    private static final Logger LOG = LoggerFactory.getLogger(AbstractComponentIT.class);
+    private static final Logger LOG = Logger.getLogger(AbstractComponentIT.class);
 
     private final static String NAMESPACE_BEGIN = "" + QName.NAMESPACE_BEGIN;
 

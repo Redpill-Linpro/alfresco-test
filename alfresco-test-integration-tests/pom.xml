@@ -4,14 +4,14 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>alfresco-test-integration-tests</artifactId>
     <name>Integration Tests Module</name>
-    <description>Integration Tests module for in-container integration testing - part of AIO - SDK 4.6</description>
+    <description>Integration Tests module for in-container integration testing - part of AIO - SDK 4.4</description>
     <packaging>jar</packaging> <!-- Note. this just runs Integration Tests, but it needs to be a JAR otherwise
                                             nothing is compiled (i.e. you cannot set it to pom) -->
 
     <parent>
         <groupId>org.redpill-linpro.alfresco</groupId>
         <artifactId>alfresco-test</artifactId>
-        <version>4.6.0</version>
+        <version>4.4.0</version>
     </parent>
 
     <properties>
@@ -23,7 +23,7 @@
         <dependency>
             <groupId>org.redpill-linpro.alfresco</groupId>
             <artifactId>alfresco-test-platform</artifactId>
-            <version>4.6.0</version>
+            <version>4.4.0</version>
             <scope>test</scope>
         </dependency>
 
